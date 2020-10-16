@@ -38,4 +38,4 @@ for i in range(100):
 for row in range(1,5):
     for i in range(1,row+1):
         print(row, end=" ")  
-    #print(" ")
+    print(" ")
