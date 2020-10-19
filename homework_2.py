@@ -25,12 +25,16 @@ for e in elements.values():
         c -= 1
         a += 1
 print(True if c > 0 or (len(word) % 2 == 1) and a == 1 else False ) 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4a6725fa4eef918bbd8b17f8f685c4e43ab12f9f
 #Narek 
 #1
 for i in range(100):
     for j in range(100):
-        if i ** j == j**i and i!= j:
+        if i ** j == j**i and i!=j!=i**j:
             print(i,j,i**j, )
     
 
