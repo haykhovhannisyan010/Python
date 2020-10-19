@@ -38,6 +38,6 @@ for sub in range(len(subString)):
                 start = sup
             elif end < sup:
                 end = sup
-        break
+            break
 print(superString[start:end + 1])
         
