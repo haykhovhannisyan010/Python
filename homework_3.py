@@ -26,3 +26,18 @@ second = sorted(list(set([elem[1] for elem in a])))[1]
 b = [el[0] for el in a if second == el[1]]
 for elem in sorted(b):
     print(elem)
+#2
+superString = "abcdefghijklmnop"
+subString = "dafebcj"
+start = 0
+end = 0
+for sub in range(len(subString)):
+    for sup in range(len(superString)):
+        if subString[sub] == superString[sup]:
+            if start < sup:
+                start = sup
+            elif end < sup:
+                end = sup
+        break
+print(superString[start:end + 1])
+        
