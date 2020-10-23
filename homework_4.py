@@ -49,7 +49,7 @@ else:
     
     
 #Ruben
-#1
+#2
 string = input()
 vowel={}
 consonant={}
