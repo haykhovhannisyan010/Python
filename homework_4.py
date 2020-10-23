@@ -12,6 +12,7 @@ for j in range(2,max(a)):
                 c.append(b)
         else:
             minn = 0
+            break
 print(min(c) if c else max(a)+1)
                
 #2
