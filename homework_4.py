@@ -51,16 +51,22 @@ else:
     
 #Ruben
 #2
-string = input()
-vowel={}
-consonant={}
-l = []
-for i in range(len(string)):
-    if string[i] in "aeoiu":
-        l.append(i)
-        b = string
-        for j in b[i+1:]:
-            print(b + j)
-            b += j
-            
-print(l)
+word = input()
+t = 1
+start, end = 0, 0 + t
+vowels = {}
+consonants = {}
+while t < len(word):
+    if word[start] in 'aeiou':
+        vowels[word[start:end]] = vowels.get(word[start:end], 0) + 1
+        start += 1
+        end += 1
+    elif word[start] not in 'aeiou':
+        consonants[word[start:end]] = consonants.get(word[start:end], 0) + 1
+        start += 1
+        end += 1
+    if end == len(word) + 1:
+        t += 1
+        start = 0
+        end = 0 + t
+print(vowels, consonants, sep='\n')
