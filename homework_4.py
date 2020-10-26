@@ -35,42 +35,58 @@ print(min(c) if c else max(a)+1)
 >>>>>>> 4bc3c12082bea3fc8e5b113a9c7b5353f801bb67
                
 ##2
-#n = "2x+15-1+2=35"
-#c = 0
-#for i in range(len(n)):
-    #c += 1
-    #if n[i] == "=":
-        #break
-#a = n[:c-1]
-#b = [n[c:]]
-#h = [n[c:]]
-#x = []
-#for j in range(len(a)):
-    #if not "x" in a[j]:
-        #if a[j] == "+":
-            #b.append("-")
-        #elif a[j] == "-":
-            #b.append("+")
-        #else:
-            #b.append(a[j])
-    #else:
-        #while h != b:
-            #if b[-1] != "+" or b[-1] != "-":
-                #x.append(b[-1])
-                #b.pop()
-                #break
-#b = "".join(b)
-#x.reverse()
-#x = "".join(x)
-#if x:
-    #print(eval(b) / int(x[0]))
-#else:
-    #print(eval(b))
-    
+a = "+4x+50-x=-40"
+if a[0].isalnum():
+    a = '+' + a
+index = 0
+list_1 = []
+for i in range(1, len(a)):
+    if not a[i].isalnum():
+        list_1.append(a[index:i])
+        index = i
+x_value = int(a[a.index('=') + 1:])
+x_cofficent = 0
+print(list_1)
+for i in list_1:
+    if i[1:].isdigit():
+        if i[0] == "-":
+            x_value += int(i[1:])
+        else:
+            x_value -= int(i[1:])
+    else:
+        if i[1:i.find('x')].isdigit():
+            x_cofficent += int(i[:i.find('x')])
+        else:
+            if i != "=":
+                x_cofficent += int(i[0] + "1")
+x_value /= x_cofficent
+print(f'x={x_value}')
+
     
 #Ruben
 <<<<<<< HEAD
 #1
+def get_neighbours_coords(i_cord, j_cord, matrix_i, matrix_j):
+    coords = []
+    for i in range(i_cord - 1, i_cord + 2):
+        for j in range(j_cord - 1, j_cord + 2):
+            if 0 <= i <= matrix_i - 1 and 0 <= j <= matrix_j - 1 and (i, j) != (i_cord, j_cord):
+                coords.append((i, j))
+    return coords
+
+
+def minesweeper(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            neighbours_coords = get_neighbours_coords(i, j, len(matrix), len(matrix[i]))
+            count = 0
+            for coord_x, coord_y in neighbours_coords:
+                if matrix[coord_x][coord_y]:
+                    count += 1
+            new_matrix[i].append(count)
+    return new_matrix
 =======
 #2
 >>>>>>> 4bc3c12082bea3fc8e5b113a9c7b5353f801bb67
