@@ -98,3 +98,57 @@ for elem in l:
     elem[1] = str(elem[1])
     a.append("".join(elem))
 print(a)
+
+#2
+chess_board = [  
+    [0, 0, 0, 0, 0, 0, 0,0],        
+    [0, 0, "q", 0, 0, 1, 0, 0],  
+    [0, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],    
+    [0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+ ]
+for i in range(len(chess_board)):
+    for j in range(len(chess_board[i])):
+        if chess_board[i][j] == 'q':
+            q = [i+1,j+1]
+flag = False
+for i in range(len(chess_board)):
+    for j in range(len(chess_board[i])):
+        if i == q[0] - 1 and chess_board[i][j] != "q":
+            if chess_board[i][j] == 1:
+                flag = True
+            if flag:
+                break
+            else:
+                chess_board[i][j] = "x"
+flag = False                
+for i in range(len(chess_board)):
+    for j in range(len(chess_board[i])):                
+        if j == q[1] - 1 and chess_board[i][j] != "q":
+            if chess_board[i][j] == 1:
+                flag = True
+            if flag:
+                break
+            else:
+                chess_board[i][j] = "x"            
+flag = False                
+for i in range(len(chess_board)):
+    for j in range(len(chess_board[i])):                
+        if abs(q[0] - 1 - i) == abs(q[1] - 1 - j) and chess_board[i][j] != "q":
+            if chess_board[i][j] == 1:
+                flag = True
+            if flag:
+                break
+            else:
+                chess_board[i][j] = "x" 
+print(chess_board[0])
+print(chess_board[1])
+print(chess_board[2])
+print(chess_board[3])
+print(chess_board[4])
+print(chess_board[5])
+print(chess_board[6])
+print(chess_board[7])
