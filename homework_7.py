@@ -40,10 +40,3 @@
 #print(swap_list_elements([1,4,6,5,7,10]))
     
 #2
-d ={"A":(0, 0), "B":(0, 4), "C":(2, 0), "D":(2,4), "E":(0,-4), "F":(2,4)}
-s = set()
-print(d)
-a = []
-for i in d:
-    if len(a) < 4:    
-        print(d[i])
