@@ -151,4 +151,8 @@ print(chess_board[3])
 print(chess_board[4])
 print(chess_board[5])
 print(chess_board[6])
+<<<<<<< HEAD
 print(chess_board[7])
+=======
+print(chess_board[7])
+>>>>>>> be04ed91ce1ba786f17355f8ea27fc2f0a0d49f7
