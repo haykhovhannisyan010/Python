@@ -39,4 +39,4 @@ def non_decreasing_sequence(*nums):
                     l[i] = -l[i]
                     l[j] = -l[j]
         return 'No'
-print(non_decreasing_sequence(7,4,3,-2))
+print(non_decreasing_sequence(1,1,1))
