@@ -53,4 +53,7 @@ def non_decreasing_sequence(*nums):
                     l[j] = -l[j]
         return 'No'
 print(non_decreasing_sequence(1,1,1))
+<<<<<<< HEAD
 
+=======
+>>>>>>> 22d6c0956a2eaaf4382f3d8fa899d98e4659b85c
