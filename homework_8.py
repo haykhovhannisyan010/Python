@@ -1,7 +1,20 @@
-##Narek
-##1
+#Narek
+#1      
+def get_books_and_date(author,**names):
+    d = {}
+    for key,value in names.items():
+        if value[0] == author:
+            d[key] = value[1]
+    sorted_d = sorted((value, key) for (key,value) in d.items())
+    for i in range(len(sorted_d)):
+        print(*sorted_d[i])
 
-##2
+
+get_books_and_date("John", Book_1 =["John",1984], Book_2 =["Bob",1974],\
+                Book_3=["Mark",1785],Book_4 =["Markes",1874],\
+                Book_5=["John",1858])
+    
+#2
 def l_m(l):
     l.sort(reverse = True)
     return l[0] * l[1] * l[2]
@@ -39,28 +52,5 @@ def non_decreasing_sequence(*nums):
                     l[i] = -l[i]
                     l[j] = -l[j]
         return 'No'
-print(non_decreasing_sequence(7,4,3,-2))
+print(non_decreasing_sequence(1,1,1))
 
-
-
-#def non_decreasing_sequence(*nums):
-    #list1 = list(nums)
-    #for i in range(len(list1)):
-        #list1[i] = 0 - list1[i]
-        #if list1 == sorted(list1):
-            #return 'Yes'
-        #else:
-            #list1[i] = 0 - list1[i]
-    #for i in range(len(list1)):
-        #for j in range(len(list1)):
-            #list1[i] = 0 - list1[i]
-            #list1[j] = 0 - list1[j]
-            #if list1 == sorted(list1):
-                #return 'Yes'
-            #else:
-                #list1[i] = 0 - list1[i]
-                #list1[j] = 0 - list1[j]
-    #return 'No'
-
-
-#print(non_decreasing_sequence(7,4,3,2))
