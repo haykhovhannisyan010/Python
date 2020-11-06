@@ -16,9 +16,20 @@ get_books_and_date("John", Book_1 =["John",1984], Book_2 =["Bob",1974],\
     
 #2
 def l_m(l):
-    l.sort(reverse = True)
-    return l[0] * l[1] * l[2]
-print(l_m([9, 5, 8, 5, 20, 1, 2, -3, -2, -1, 0]))
+    l = [9, 5, 8, 5, 20, 1, -20, -1, -30] 
+    positive = [i for i in l if i > 0]
+    negative = [j for j in l if j < 0]
+    positive.sort(reverse = True)
+    negative.sort()
+    if len(negative) > 1:
+        if abs(negative[0]) * abs(negative[1]) * positive[0] > positive[0] \
+        * positive[1] * positive[2]:
+            return (abs(negative[0]) * abs(negative[1]) * positive[0])
+        else:
+            return (positive[0]  * positive[1] * positive[2]) 
+    else:
+        return (positive[0]  * positive[1] * positive[2]) 
+print(l_m([9, 5, 8, 5, 20, 1, 2, -20, -1, -30]))
 
 #Ruben 
 #1
