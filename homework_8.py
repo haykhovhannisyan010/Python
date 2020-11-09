@@ -39,7 +39,11 @@ def answer_queries(k, *q):
     for i in range(len(l)):
         if i == len(l) - 1:
             if k - l[i] > 0:
+<<<<<<< HEAD
                 return c
+=======
+                return count
+>>>>>>> 3f57b24e0940f165e7c536918cebc8878e07d174
             elif k < l[i]:
                 c += (l[i]) // k
                 return c            
@@ -50,10 +54,19 @@ def answer_queries(k, *q):
                 l[i + 1] += l[i] - k
             c += 1                    
     return c + 1
+<<<<<<< HEAD
 print(answer_queries(5,6,3,3,3))
+=======
+
+
+print(answer_queries(5,6,3,3,3))
+
+
+>>>>>>> 3f57b24e0940f165e7c536918cebc8878e07d174
 #2
 import math
 def non_decreasing_sequence(*nums):
+<<<<<<< HEAD
     nums = list(nums)
     i = 0
     while i < len(nums) - 1:
@@ -74,3 +87,23 @@ def non_decreasing_sequence(*nums):
         return f"Yes \n{nums}"
     return "No"
 print(non_decreasing_sequence(3,2,5))
+=======
+    l = list(nums)
+    for i in range(1, len(l)):
+        if abs(l[i-1]) < abs(l[i]):
+            if l[i] < 0:
+                l[i] = abs(l[i])            
+        else:
+            if l[i-1] >= 0:
+                l[i-1] = -l[i-1]            
+    if l == sorted(l):
+        return 'Yes', l
+    return 'No'
+
+print(non_decreasing_sequence(7,2,5,8))
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 22d6c0956a2eaaf4382f3d8fa899d98e4659b85c
+>>>>>>> 3f57b24e0940f165e7c536918cebc8878e07d174
