@@ -49,3 +49,15 @@ b = [2,2,2,1,2,2,2,2]
 print(get_coin(b))
 
 #2
+def word_rotate(word):
+    if "(" in word and ")" in word:
+        for i in range(len(word)):
+            if word[i] == "(":
+                start = i
+            elif word[i] == ")":
+                end = i
+        word_rotate(word[:start] + word[start+1:end][::-1] + word[end+1:])
+    else:
+        print(word)
+        
+word_rotate("H(ya)k (oH)vh(nnah)isyan")
