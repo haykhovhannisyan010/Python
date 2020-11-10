@@ -56,8 +56,9 @@ def word_rotate(word):
                 start = i
             elif word[i] == ")":
                 end = i
+                break
         word_rotate(word[:start] + word[start+1:end][::-1] + word[end+1:])
     else:
         print(word)
         
-word_rotate("H(ya)k (oH)vh(nnah)isyan")
+word_rotate("(foo(bar))")
