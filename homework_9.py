@@ -62,4 +62,8 @@ def word_rotate(word):
     else:
         print(word)
         
+<<<<<<< HEAD
 word_rotate("(foo(bar))")
+=======
+word_rotate("(foo(bar))")
+>>>>>>> 578ea5e8761b8d891d810f0d2021320e3df1bb5c
