@@ -97,17 +97,17 @@ while t < len(word):
         start += 1
         end += 1
     elif word[start] not in 'aeyuio':
-    if word[start] in 'aeiou':
-        vowels[word[start:end]] = vowels.get(word[start:end], 0) + 1
-        start += 1
-        end += 1
-    elif word[start] not in 'aeiou':
-        consonants[word[start:end]] = consonants.get(word[start:end], 0) + 1
-        start += 1
-        end += 1
-    if end == len(word) + 1:
-        t += 1
-        start = 0
-        end = 0 + t
+        if word[start] in 'aeiou':
+            vowels[word[start:end]] = vowels.get(word[start:end], 0) + 1
+            start += 1
+            end += 1
+        elif word[start] not in 'aeiou':
+            consonants[word[start:end]] = consonants.get(word[start:end], 0) + 1
+            start += 1
+            end += 1
+        if end == len(word) + 1:
+            t += 1
+            start = 0
+            end = 0 + t
 print(vowels, consonants, sep='\n')
 

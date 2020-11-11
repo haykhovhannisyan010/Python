@@ -13,9 +13,11 @@ a = set()
 x = 0   
 def all_increasing_sequences(k,n,x,l):   
     global a
+    b = []
     if x == n:
         for i in range(n): 
-            a.add((l[0],l[1],l[2]))
+            k = [k for k in l]
+            a.add(tuple(k))
     else:
         i = 1 if x == 0 else l[x - 1] + 1
         x += 1    
@@ -30,7 +32,7 @@ def all_increasing_sequences_print(n,k):
     all_increasing_sequences(k, n, x, l)
     return a
         
-print(all_increasing_sequences_print(3,5))
+print(all_increasing_sequences_print(2,8))
 
 #Narek
 #1
@@ -48,3 +50,16 @@ b = [2,2,2,1,2,2,2,2]
 print(get_coin(b))
 
 #2
+def word_rotate(word):
+    if "(" in word and ")" in word:
+        for i in range(len(word)):
+            if word[i] == "(":
+                start = i
+            elif word[i] == ")":
+                end = i
+                break
+        word_rotate(word[:start] + word[start+1:end][::-1] + word[end+1:])
+    else:
+        print(word)
+        
+word_rotate("(foo(bar))")
