@@ -58,8 +58,10 @@ def get_digits(product):
         return get_digits(product//i)       
     
 def digitsProduct(product):
-    if product < 10: return product
-    elif product == 0: return 10    
+    if product < 10: 
+        if product == 0: 
+            return 10  
+        return product
     get_digits(product)
     if -1 in a:
         return -1
@@ -67,6 +69,9 @@ def digitsProduct(product):
     for i in reversed(a):
         str_number+= str(i)
     return int(str_number)
+ 
+
+print(digitsProduct(7))
  
 
 print(digitsProduct(16))
