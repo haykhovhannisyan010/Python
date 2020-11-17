@@ -72,8 +72,4 @@ def digitsProduct(product):
  
 
 print(digitsProduct(7))
- 
-
-print(digitsProduct(16))
-
 
