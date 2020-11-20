@@ -71,4 +71,9 @@ def digitsProduct(product):
     return int(str_number)
  
 
+<<<<<<< HEAD
 print(digitsProduct(12))
+=======
+print(digitsProduct(7))
+
+>>>>>>> 94355c177761b631a619f997793efad60cf0ea5f
