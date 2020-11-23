@@ -16,6 +16,7 @@
 #numstriangle(9)
 
 #2
+<<<<<<< HEAD
 #def luckynum(a):
     #for i in range(len(a)):
         #if i == a[i]:
@@ -23,6 +24,15 @@
     #return -1
         
 #print(luckynum([0,1,2,5,7,8]))
+=======
+def luckynum(a):
+    for elem in enumerate(a):
+        if elem[0] == elem[1]:
+            return elem[0]
+    return -1
+print(luckynum([-1,0,1,4]))
+
+>>>>>>> 162d376d1b0fae2eb678c50e41171bfaf3a110df
 
 #def luckynum(a):
     #for elem in enumerate(a):
