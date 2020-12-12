@@ -18,7 +18,7 @@ class User:
 
 class Person(User):
     def __init__(self, name, birthday):
-        self.name = name
+        super().__init__(name)
         self.bth_date = birthday
     
     def info(self):
@@ -29,16 +29,16 @@ class Person(User):
         
         
 class Community(User):
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
+    def __init__(self, name, discription):
+        super().__init__(name)
+        self.description = discription
         
     def info(self):
         print(f"Description: {self.description}")
 
 u = User("Hayk")
-p = Person("Hayk","Feb 27")
-d = Community("Hayk","...")
+p = Person(u,"Feb 27")
+d = Community(u,"...")
 print(u.info())
 u.describe()
 p.info()
