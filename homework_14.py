@@ -29,9 +29,9 @@ class Person(User):
         
         
 class Community(User):
-    def __init__(self, name, discription):
+    def __init__(self, name, description):
         self.name = name
-        self.description = discription
+        self.description = description
         
     def info(self):
         print(f"Description: {self.description}")
