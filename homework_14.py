@@ -29,9 +29,15 @@ class Person(User):
         
         
 class Community(User):
+<<<<<<< HEAD
     def __init__(self, name, description):
         super().__init__(name)
         self.description = description
+=======
+    def __init__(self, name, discription):
+        super().__init__(name)
+        self.description = discription
+>>>>>>> 80228d4541f0cacf12b391a1c2469bd2d6c28f59
         
     def info(self):
         print(f"Description: {self.description}")
