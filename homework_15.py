@@ -1,4 +1,5 @@
 # 1
+
 class Weapon:
     def __init__(self, name, damage, a_range):
         self.name = name
@@ -11,10 +12,10 @@ class Weapon:
             c2 = target.get_coords()
             distance = ((c1[0] - c2[0]) ** 2 + (c1[1] - c2[1]) ** 2) ** 0.5
             if self.a_range >= distance:
-                print(f"target is too far for weapon {self.name}")
-            else:
                 print(f"enemy was hit from weapon {self.name} damage is {self.damage}")
-                target.get_damage(actor.current_weapon.damage)
+                target.get_damage(self.damage)
+            else:
+                print(f"target is too far for weapon {self.name}")
         else:
             print("the enemy is already defeated")
 
@@ -46,8 +47,8 @@ class BaseCharacter:
 
 class BaseEnemy(BaseCharacter):
     def __init__(self, pos_x, pos_y, weapon, hp):
-        self.current_weapon = weapon
         super().__init__(pos_x, pos_y, hp)
+        self.current_weapon = weapon
 
     def hit(self, target):
         if isinstance(target, MainHero):
@@ -60,42 +61,37 @@ class BaseEnemy(BaseCharacter):
 
 
 class MainHero(BaseCharacter):
+
     def __init__(self, pos_x, pos_y, name, hp):
         self.name = name
         self.weapon = []
-        self.current_weapon = None
         self.max_hp = 200
         super().__init__(pos_x, pos_y, hp)
 
     def hit(self, target):
-        if not self.weapon:
-            print("i with weapon")
-        elif isinstance(target, BaseEnemy):
-            self.current_weapon.hit(self, target)
+        if isinstance(target, BaseEnemy):
+            if len(self.weapon) == 0:
+                print("i am unarmed")
+            else:
+                self.weapon[0].hit(self, target)
         else:
             print("i can hit only enemy")
 
     def add_weapon(self, weapon):
         if isinstance(weapon, Weapon):
+            self.weapon.append(weapon)
             print(f"picked up {weapon}")
-            if not self.current_weapon:
-                self.current_weapon = weapon
-                self.weapon += [weapon]
-            else:
-                self.weapon += [weapon]
         else:
             print("it’s not a Weapon")
 
     def next_weapon(self):
-        if not self.current_weapon:
-            print("i am unarmed")
+        if len(self.weapon) > 1:
+            self.weapon.append(self.weapon.pop(0))
+            print(f"i take weapon {self.weapon[0]}")
         elif len(self.weapon) == 1:
             print("i have one weapon")
         else:
-            self.current_weapon += 1
-            if self.current_weapon >= len(self.weapon):
-                self.current_weapon = 0
-            print(f"i take weapon {self.weapon[self.current_weapon]}")
+            print("i am unarmed")
 
     def heal(self, amount):
         if self.hp + amount >= self.max_hp:
@@ -104,12 +100,18 @@ class MainHero(BaseCharacter):
             self.hp += amount
         print(f"now my health is hp {self.hp}")
 
+
 # 2
-
-
 def nums(n):
+    number = 0
     for i in range(1, n + 1):
-        print(i, end="")
+        x, y = 1, i
+        while y / 10 > 1:
+            x += 1
+            y /= 10
+        number = number * (10 ** x) + i
+    return number
 
 
-nums(13)
+print(nums(13))
+
